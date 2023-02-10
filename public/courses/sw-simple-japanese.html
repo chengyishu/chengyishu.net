@@ -1,0 +1,727 @@
+<!doctype html>
+<html style='font-size:18px !important'>
+<head><link rel="icon" type="image/png" href="images/official/logo.png">
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url('file:///Users/thomas/Library/Application%20Support/abnerworks.Typora/themes/vue/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}@import '';
+
+:root {
+    --side-bar-bg-color: #fff;
+    --control-text-color: #777;
+    --font-sans-serif: 'Ubuntu', 'Source Sans Pro', sans-serif !important;
+    --font-monospace: 'Fira Code', 'Roboto Mono', monospace !important;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-sans-serif);
+    color: #34495e;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6rem;
+    letter-spacing: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#write {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px 30px 100px;
+}
+
+#write p {
+    line-height: 1.6rem;
+    word-spacing: .05rem;
+}
+
+#write ol li {
+    padding-left: 0.5rem;
+}
+
+#write > ul:first-child,
+#write > ol:first-child {
+    margin-top: 30px;
+}
+
+body > *:first-child {
+    margin-top: 0 !important;
+}
+
+body > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+a {
+    color: #42b983;
+    font-weight: 600;
+    padding: 0 2px;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+
+h1 tt,
+h1 code {
+    font-size: inherit !important;
+}
+
+h2 tt,
+h2 code {
+    font-size: inherit !important;
+}
+
+h3 tt,
+h3 code {
+    font-size: inherit !important;
+}
+
+h4 tt,
+h4 code {
+    font-size: inherit !important;
+}
+
+h5 tt,
+h5 code {
+    font-size: inherit !important;
+}
+
+h6 tt,
+h6 code {
+    font-size: inherit !important;
+}
+
+h2 a,
+h3 a {
+    color: #34495e;
+}
+
+h1 {
+    padding-bottom: .4rem;
+    font-size: 2.2rem;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.75rem;
+    line-height: 1.225;
+    margin: 35px 0 15px;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ddd;
+}
+
+h3 {
+    font-size: 1.4rem;
+    line-height: 1.43;
+    margin: 20px 0 7px;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 1rem;
+    color: #777;
+}
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table {
+    margin: 0.8em 0;
+}
+
+li > ol,
+li > ul {
+    margin: 0 0;
+}
+
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+body > h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body > h1:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body > h3:first-child,
+body > h4:first-child,
+body > h5:first-child,
+body > h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+a:first-child h1,
+a:first-child h2,
+a:first-child h3,
+a:first-child h4,
+a:first-child h5,
+a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+    margin-top: 0;
+}
+
+li p.first {
+    display: inline-block;
+}
+
+ul,
+ol {
+    padding-left: 30px;
+}
+
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+
+blockquote {
+    border-left: 4px solid #42b983;
+    padding: 10px 15px;
+    color: #777;
+    background-color: rgba(66, 185, 131, .1);
+}
+
+table {
+    padding: 0;
+    word-break: initial;
+}
+
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+
+table tr:nth-child(2n),
+thead {
+    background-color: #fafafa;
+}
+
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table tr td {
+    border: 1px solid #dfe2e5;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+#write strong {
+    padding: 0 1px;
+}
+
+#write em {
+    padding: 0 5px 0 2px;
+}
+
+#write table thead th {
+    background-color: #f2f2f2;
+}
+
+#write .CodeMirror-gutters {
+    border-right: none;
+}
+
+#write .md-fences {
+    border: 1px solid #F4F4F4;
+    -webkit-font-smoothing: initial;
+    margin: 0.8rem 0 !important;
+    padding: 0.3rem 0 !important;
+    line-height: 1.43rem;
+    background-color: #F8F8F8 !important;
+    border-radius: 2px;
+    font-family: var(--font-monospace);
+    font-size: 0.85rem;
+    word-wrap: normal;
+}
+
+#write .CodeMirror-wrap .CodeMirror-code pre {
+    padding-left: 12px;
+}
+
+#write code, tt {
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-family: var(--font-monospace);
+    font-size: 0.92rem;
+    color: #e96900;
+    background-color: #f8f8f8;
+}
+
+tt {
+    margin: 0 2px;
+}
+
+#write .md-footnote {
+    background-color: #f8f8f8;
+    color: #e96900;
+}
+
+/* heighlight. */
+#write mark {
+    background-color: #EBFFEB;
+    border-radius: 2px;
+    padding: 2px 4px;
+    margin: 0 2px;
+    color: #222;
+    font-weight: 500;
+}
+
+#write del {
+    padding: 1px 2px;
+}
+
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+    color: #22a2c9;
+}
+
+.cm-s-inner .cm-string {
+    color: #22a2c9;
+}
+
+.md-task-list-item > input {
+    margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+    background-color: #f8f8f8;
+}
+
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block > .code-tooltip {
+    bottom: .375rem;
+}
+
+#write > h3.md-focus:before {
+    left: -1.5625rem;
+    top: .375rem;
+}
+
+#write > h4.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write > h5.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write > h6.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+.md-image > .md-meta {
+    border-radius: 3px;
+    font-family: var(--font-monospace);
+    padding: 2px 0 0 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: inherit;
+}
+
+.md-toc {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#md-notification:before {
+    top: 10px;
+}
+
+/** focus mode */
+
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header,
+.context-menu,
+.megamenu-content,
+footer {
+    font-family: var(--font-sans-serif);
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state {
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}} .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style><title>圣王极简日语课（附：教学大纲）</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='圣王极简日语课附教学大纲'><span>圣王极简日语课</span><small><span>（附：教学大纲)</span></small></h1><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#圣王极简日语课附教学大纲">圣王极简日语课（附：教学大纲)</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n66"><a class="md-toc-inner" href="#一语音文字">一、语音文字</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n100"><a class="md-toc-inner" href="#二语法词汇">二、语法词汇</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n207"><a class="md-toc-inner" href="#三听说强化">三、听说强化</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n211"><a class="md-toc-inner" href="#四应试强化">四、应试强化</a></span></p></div><p><img src="images/illustrate/mnnnhg-bg.png" referrerpolicy="no-referrer" alt="mnnnhg-bg"></p><p>&nbsp;</p><p><span>　　山川异域，风月同天。在世界的东方有这样一个岛国，那里生活着一个古老的民族，千百年来与我中华民族纠缠不休，互通文化，对我国犯下过滔天罪孽，也为我国培育过先驱巨匠。他们好战而祥和，黩武却好美，傲慢然尚礼，呆板又善变，驯服且倔强，忠贞也叛逆，勇敢兼懦弱，保守并喜新，矛盾如菊与刀。他们自称大和民族，称自己的国家为“日出之国”，这个国家就是日本。</span></p><p><span>　　兵无常势，水无常形。隋唐时期中华民族进入全盛，日本便频繁派来使者学习先进经验，史称遣隋使、遣唐使，他们带走了我们的文学、艺术、科技、制度，对日本的文化和发展产生了深远的影响。近代以来，满清积贫积弱，先进人士谋求变革，分东洋、西洋两路渡海求学，留学东洋的目的地便是日本。陈独秀、李大钊、鲁迅、周恩来、郭沫若 …… 从日本带回来先进的思想，先进的文化，现代汉语中如“政治”、“经济”、“哲学”等词汇便是那时由日本最先翻译传入中国的。这些率先觉醒的先驱引领着人民，逐步使我中国摆脱旧日的贫困，开启了中华民族伟大复兴的征程。而后数年，改革开放前夕，邓小平访问日本，学习了日本的发展成果之后，下定了变革求进的决心，才有如今的繁荣富强。</span></p><p><span>　　时至今日，攻守易形。和平年代下的美好，更促进了文化的交织。说到美国，你会想起好莱坞的电影；说到韩国，你会想起跌宕起伏的电视剧；说到日本，那必然是天马行空的动漫了。在日本这样一个漫画之国，图书电视的编排制作，街头巷尾的宣传告示，无不以漫画的形式讲述着大和民族的浪漫。日本的动画影响了一代中国九零后，日本的影视剧和音乐影响了一代中国八零后，这些影音资料又成为了新世代的中国人了解日本的窗口，又通过日本，了解我们自己，了解我们自己的祖先和文化，哪怕连我们自己都已经糟蹋舍弃的部分，日本人还在继承和发扬着，就像是我们自己的祖先在日本留下的一份中华文化的备份。现代日语中使用的大量的词汇和语法，竟与我们的古汉语完全一致，毕竟他们也念论语、读汉诗，传承佛教，习练书法 …… 若想要开启这座宝藏，感受天涯比邻的两个民族的文化，跨越千年在新时代相交的感动，掌握日语将是学者需要迈出的第一步！</span></p><p>&nbsp;</p><p><img src="images/illustrate/poster.png" alt="海报" style="zoom:80%;" /></p><p>&nbsp;</p><p><span>　　唐山圣王教育集团起步于跆拳道教育培训，拥有独立品牌“圣王武道”，除了通过跆拳道运动带给学员们强健的体魄之外，更希望通过跆拳道给予学员们一个了解韩国传统的窗口，丰富学员的世界观。今特邀旅日归来的李毅老师，开设日语交流课程，面向社会招生。通过我们的课程，您可以获得：</span></p><ul><li><span>掌握一门英语之外的小语种的自信</span></li><li><span>学习语言的正确高效的方法和诀窍（可扩展应用至英语、古汉语、编程语言学习）</span></li><li><span>满足日常生活需要的日语交流能力</span></li><li><span>可以看懂日语字幕、听懂无字幕日语动漫、电影、歌曲的自由</span></li><li><span>参加日语能力考级JLPT合格的证书</span></li><li><span>高考外语选考日语的弯道超车机会</span></li></ul><p>&nbsp;</p><p><span>　　圣王极简日语课采用 </span><strong><span>&quot;小班授课&quot;</span></strong><span> 形式，招收</span><strong><span>小学三年级以上</span></strong><span>学员，每节课安排 </span><strong><span>&quot;1+半小时 </span><sup><span style="color:white;background:red;font-size:13px;font-weight:bold;border-radius:5px;padding:1px 4px;"><span>限时免费</span></span></sup><span> &quot;</span></strong><span> 的课堂时间，具体内容如下：</span></p><ul><li><p><strong><span>一小时主讲授课：</span></strong><span>简单复习上节内容，推进本节课程内容。</span></p></li><li><p><strong><span>半小时实战练习</span></strong><span> </span><sup><span style="color:white;background:red;font-size:13px;font-weight:bold;border-radius:5px;padding:1px 4px;"><span>限时免费</span></span></sup><strong><span>：</span></strong><span>充分练习本节内容，兴趣内容交流答疑。</span></p><blockquote><p><span>半小时加课限免福利，内测名额有限先到先得，正式招生后恢复原价。</span></p></blockquote></li></ul><p>&nbsp;</p><p><span>　　李毅老师的课程紧凑而又实用，实战应用为先是其教学理念。李老师自幼喜爱文学，从作家名师</span><u><span>郭松</span></u><span>先生处问学多年，后考入唐山一中，高考语文单科成绩131分，充分体现了李老师学生时代的文学积累和应试素养。其后毕业于东北大学（教育部直属的国家“985工程”重点大学）软件工程专业，期间专业课授课答辩由外籍教师以全英文方式进行，后自学日语远赴日本从事软件开发工作。高中时始系统接触中国传统文化，大学时自学不辍，研究愈发精深，赴日工作期间，同时担任圣王武道的文化顾问，在道馆的文化设计方面多有良策。因感怀故乡，疫情肆虐，遂归国谋事，今得此良机，请其讲授日语课程，方有此事。李老师文理兼修，博学多才，文学上的修养使其常能旁征博引，信手拈来，理工科的逻辑又使其常能一针见血，深入浅出。李老师为人和乐坦易，因材施教，虽是日语课程，却常能以所讲授为手段，启发学员探索和掌握学习的一般规律，激发兴趣，自我驱动。</span></p><p>&nbsp;</p><div style="background:#f3f3f3;padding:20px;text-indent:2rem;border-radius:15px;"><strong>语言是工具、是钥匙。语言是技能，而不是知识，要以能交流为先，不能只会做题。</strong><div style="text-align:right;">—— 李毅　</div></div><p>&nbsp;</p><p><span>主讲讲师：</span><span style="font-size:20px;"><strong><span>李毅</span></strong></span></p><p><img src="images/avatar/ly.jpg" alt="ly" style="zoom:25%;" /><span> </span></p><ul><li><span>圣王武道文化顾问</span></li><li><span>东北大学软件工程（国际班(英语)）专业工学学士</span></li><li><span>全国大学英语考试六级水平</span></li><li><span>日本国际交流基金会日本语能力测试 JLPT N2 水平</span></li><li><span>国家汉办、孔子学院总部汉语水平考试 HSK 六级水平</span></li><li><span>唐山一中应届高考语文单科成绩 131 分</span></li><li><span>赴日本名古屋从事软件设计开发工作五年</span></li><li><span>兼职对外汉语教育三年（主要面向日本职场人士）</span></li><li><span>喜爱钻研古代经史典籍，对中国传统文化有深入研究</span></li><li><span>擅长文化赋能、文案写作、视频策划</span></li><li><span>善于使用和开发相关软件完成作品创作，对接宣发推广 </span></li></ul><p>&nbsp;</p><p><span>教学理念：</span><span style="font-size:20px;"><strong><span>守护学习的热情</span></strong></span></p><p><img src="images/illustrate/concept.png" style="zoom:50%;" /><span> </span></p><p>&nbsp;</p><h2 id='一语音文字'><span>一、语音文字</span></h2><p><span>日语演变史、文字构成及发音规则教学。</span></p><ol start='' ><li><p><span>平假名あかさたな行+输入法教学</span></p></li><li><p><span>平假名はまやらわ行+拨音ん教学</span></p></li><li><p><span>平假名清音复习</span></p></li><li><p><span>平假名浊音がざだば、半浊音ぱ</span></p></li><li><p><span>平假名拗音</span></p></li><li><p><span>平假名浊音、半浊音、拗音复习</span></p></li><li><p><span>片假名アカサタナ行+片假名的用途</span></p></li><li><p><span>片假名ハマヤラワ行+拨音ン教学</span></p></li><li><p><span>片假名清音部分复习</span></p></li><li><p><span>片假名浊音ガザダバ、半浊音パ、拗音</span></p></li><li><p><span>片假名浊音、半浊音、拗音复习</span></p></li><li><p><span>促音及长音发音规则、音调标记及MOJi辞書使用</span></p></li><li><p><span>考核①：</span><a href='https://kana.chengyishu.net/'><strong><span>假名练习</span></strong></a><strong><span>正确率80%以上</span></strong><span>。</span></p><p><span>考核②：简单单词听发音默写假名。（由老师根据实际情况判定）</span></p><p><span>考核③：简单单词听发音按键输入成功。（可选使用电脑或手机）</span></p><p><span>考核④：简单单词读发音语音输入成功。（可选使用电脑或手机）</span></p></li></ol><p><span>考核通过则可顺利进入第二部分的学习，考核失败原则上建议追加一节强化课。</span></p><p>&nbsp;</p><h2 id='二语法词汇'><span>二、语法词汇</span></h2><p><span>采用《大家的日语（初级）》作为教材，每节课有成体系的主题内容，同时见缝插针地补充日语中不成体系的零碎用法。</span></p><ol start='0' ><li><strong><span>先导课：</span></strong><span>教材结构说明、学习方法概述、作业考核标准</span></li><li><strong><span>陈否疑：</span></strong><span>は、です、じゃありません、か、も、の、さん</span></li><li><strong><span>代词：</span></strong><span>これ/それ/あれ、この/その/あの、そう、か|か、の</span></li><li><strong><span>地点：</span></strong><span>こ・そ・あ・ど、場所、の、お国</span></li><li><strong><span>時間：</span></strong><span>時分、ます/ません/ました/ませんでした、に、からまで、と、ね</span></li><li><strong><span>移动：</span></strong><span>へ、も、で、と、いつ、よ</span></li><li><strong><span>动作：</span></strong><span>を、します、何、で、ませんか、ましょう、お</span></li><li><strong><span>授受1：</span></strong><span>で、にあげます、にもらいます、もう</span></li><li><strong><span>形容：</span></strong><span>い形容詞、な形容詞、とても/あまり、どう、どんな、が、どれ</span></li><li><strong><span>特例：</span></strong><span>どうして、から、が、どんな、よく/だいたい/たくさん/少し/あまり/全然</span></li><li><strong><span>存在：</span></strong><span>に、あります/います、はvsが、の、や、か、ありませんか</span></li><li><strong><span>数量：</span></strong><span>数量、いくつ、なん、くらい（ぐらい）、どのくらい、に…回、だけ</span></li><li><strong><span>形容过去：</span></strong><span>い形容詞、な形容詞、より、どちら、ほう、中で、一番</span></li><li><strong><span>欲望：</span></strong><span>が欲しい、たい、動詞に、を、どこか、なにか、ご注文</span></li><li><strong><span>动词变形：</span></strong><span>I/II/IIIグループ、て形、てください、ています、ましょうか、が</span></li><li><strong><span>许可禁止：</span></strong><span>てもいい、てはいけません、ています、知りません</span></li><li><strong><span>连续补充：</span></strong><span>て、い形くて、名詞・な形で、てから、は+が、どうやって、どの</span></li><li><strong><span>动词变形：</span></strong><span>ない形、ないでください、なければなりません、なくてもいい、は、までに</span></li><li><strong><span>动词变形：</span></strong><span>辞書形、こと、ができます、趣味、まえに、なかなか、ぜひ</span></li><li><strong><span>动词变形：</span></strong><span>た形、たことがあります、たりたりします、なります、ね</span></li><li><strong><span>简体</span></strong></li><li><strong><span>内容：</span></strong><span>と、でしょう、で、あります、でも、ないと</span></li><li><strong><span>定语从句：</span></strong><span>普通形、が</span></li><li><strong><span>时间状语：</span></strong><span>とき、と、が、を</span></li><li><strong><span>授受2：</span></strong><span>くれます、てあげます/てもらいます/てくれます、が</span></li><li><strong><span>条件：</span></strong><span>たら、ても/でも、もし、いくら、が</span></li><li><strong><span>强调：</span></strong><span>んです、ていただけませんか、たらいいですか、は</span></li><li><strong><span>动词变形：</span></strong><span>可能形、が、見えます、聞こえます、できます、は、は|は、も、しか</span></li><li><strong><span>并列：</span></strong><span>ながら、ています、し、それに、それで、へvsに</span></li><li><strong><span>自動詞：</span></strong><span>ています、てしまいました/てしまいます、ありました、どこかで、どこかに</span></li><li><strong><span>刻意：</span></strong><span>てあります、ておきます、まだ、それは</span></li><li><strong><span>动词变形：</span></strong><span>意向形、と思っています、つもり、予定、まだ…ていません、こvsそ</span></li><li><strong><span>推测：</span></strong><span>たほうがいい、ないほうがいい、でしょう、かもしれません、きっと、たぶん、もしかしたら、何か心配なこと、数量詞で</span></li><li><strong><span>动词变形：</span></strong><span>命令形、禁止形、と読みます、と書いてあります、という意味です、と言っていました、と伝えていただけませんか</span></li><li><strong><span>状语从句：</span></strong><span>とおりに、あとで、て、ないで</span></li><li><strong><span>动词变形：</span></strong><span>仮定形、なら、どうすればいいですか、どうしたらいいですか、ば…ほど</span></li><li><strong><span>努力：</span></strong><span>ように、ようになります、なくなります、ようにします、ないようにします、とか</span></li><li><strong><span>动词变形：</span></strong><span>受身形、に、を、が/は、によって、からつくります/でつくります</span></li><li><strong><span>动词名词化：</span></strong><span>の、とき助詞</span></li><li><strong><span>原因：</span></strong><span>て形、で、ので、途中で</span></li><li><strong><span>宾语从句：</span></strong><span>か、かどうか、てみます、い形容詞の名詞化、でしょうか</span></li><li><strong><span>授受3：</span></strong><span>やります、いただきます、くださいます、てやります、ていただきます、てくださいます、てくださいませんか、に</span></li><li><strong><span>目的：</span></strong><span>ために、に、数量は、数量も</span></li><li><strong><span>好像1：</span></strong><span>そう、てきます、行ってきます</span></li><li><strong><span>过分：</span></strong><span>すぎます、しやすい、しにくい、名詞と形容詞の副詞化</span></li><li><strong><span>条件转折：</span></strong><span>場合、のに</span></li><li><strong><span>刚刚：</span></strong><span>ところ、ばかり、はず</span></li><li><strong><span>好像2：</span></strong><span>そう、よう、声/音/におい/味がします</span></li><li><strong><span>动词变形：</span></strong><span>使役形、に、を、使役ていただけませんか</span></li><li><strong><span>敬语（尊敬语）：</span></strong><span>尊敬形、お…になります、特別な動詞、お…ください、お/ご、まして</span></li><li><strong><span>敬語（謙遜語、丁寧語）：</span></strong><span>お/ご…します、特別な動詞、ございます、でございます、よろしいでしょうか</span></li></ol><p><span>因教学内容丰富，期间出现学习吃力的情况，原则上建议追加一节强化课。</span></p><p>&nbsp;</p><h2 id='三听说强化'><span>三、听说强化</span></h2><p><span>根据学员需要强化的会话主题、兴趣形式另行定制专属课程方案。</span></p><p><span>比如学员喜欢观赏日本电视剧、动漫，则可以采用无字幕影片进行听说练习，如沉浸式配音、角色扮演等形式。</span></p><p>&nbsp;</p><h2 id='四应试强化'><span>四、应试强化</span></h2><p><span>根据学员参加日语能力考试 (JLPT) 的目标等级另行拟定课程方案。</span></p><p><span>比如学员准备参加最近一次的N3考试，则可以按照考纲查缺补漏未学内容，练习往年真题和模拟测验进行答疑。</span></p><p>&nbsp;</p><p>&nbsp;</p><h5 style="text-align:center;">价格方案</h5><h6 style="text-align:center;">① 1对1独步班 ¥350元/人·节 </h6><div style="text-align:center;"><sup>(一名学生成班，1人小班，取“独步天下”之意)</sup></div><h6 style="text-align:center;">② 1对2双雄班 ¥240元/人·节</h6><div style="text-align:center;"><sup>(两名学生成班，2人小班，取“双雄争锋”之意)</sup></div><h6 style="text-align:center;">③ 1对6群英班 ¥90元/人·节</h6><div style="text-align:center;"><sup>(六名学生成班，6人小班，取“群英荟萃”之意)</sup></div><div style="text-align:center;">※<small>以上方案为正式执行价格，了解<b>开班时间</b>及当期<strong>活动折扣</strong>情况请加招生老师微信详询。</small></div><p>&nbsp;</p><p>&nbsp;</p><p><img src="images/official/dojang.png" alt="dojang" style="zoom:15%;" /></p><div style="text-align:center;font-size:16px;">主办单位：圣王教育集团</div><div style="text-align:center;font-size:16px;">教室地址：<a href="https://ditu.amap.com/place/B0FFMCWOIE">丰润区光华商业楼101二楼<br>圣王武道校长室</a></div><p>&nbsp;</p><div style="text-align:center;font-size:16px;">主讲讲师：<b>李毅</b>老师</div><div style="text-align:center;font-size:16px;">电话：<a href="tel:15313534203" style="font-size:19px;"><b>15313534203</b></a></div><p>&nbsp;</p><div style="text-align:center;font-size:16px;">招生咨询：<b>王鑫</b>老师</div><div style="text-align:center;font-size:16px;">电话：<a href="tel:17713126686" style="font-size:19px;"><b>17713126686</b></a></div><p><img src="images/wechat/wx.png" style="zoom:60%;box-shadow:0px 1px 11px 2px rgb(42 42 42 / 10%);" /></p><div style="text-align:center;font-size:14px;"><b>（长按或扫描二维码添加老师微信👆🏻）</b></div></div></div>
+</body>
+</html>
